@@ -12,6 +12,7 @@ router.use(verificarToken as RequestHandler)
 
 // Rutas de proyectos
 router.get('/', proyectosController.getProyectos as RequestHandler)
+router.post('/', esSupervisor, proyectosController.crearProyecto as RequestHandler)
 router.get('/estadisticas', proyectosController.getProyectosConEstadisticas as RequestHandler)
 router.get('/:id', proyectosController.getProyecto as RequestHandler)
 router.get('/:id/actividades', proyectosController.getActividadesProyecto as RequestHandler)
