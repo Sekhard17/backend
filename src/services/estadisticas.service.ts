@@ -33,7 +33,7 @@ export const obtenerEstadisticasDiarias = async (
       usuarioId || 'current', // Esto se reemplazará en el controlador con el ID real
       fechaInicioDate,
       fechaFinDate,
-      'enviado'
+      ['enviado']
     );
     
     // Crear un mapa para agrupar actividades por fecha

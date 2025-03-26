@@ -35,9 +35,14 @@ export const obtenerActividadesPorRango = async (
   usuarioId: string,
   fechaInicio: Date,
   fechaFin: Date,
-  estado: string = 'enviado'
+  estado: string | string[] = ['enviado']
 ) => {
-  return await actividadModel.obtenerActividadesPorRango(usuarioId, fechaInicio, fechaFin, estado)
+  return await actividadModel.obtenerActividadesPorRango(
+    usuarioId, 
+    fechaInicio, 
+    fechaFin, 
+    Array.isArray(estado) ? estado : [estado]
+  )
 }
 
 // Crear una nueva actividad

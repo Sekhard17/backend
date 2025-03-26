@@ -1,11 +1,12 @@
 // src/services/auth.service.ts
 // Este servicio maneja la lógica de autenticación
 
-import jwt from 'jsonwebtoken'
 import bcrypt from 'bcrypt'
 import config from '../config/config'
 import { UsuarioLogin, UsuarioRegistro } from '../types/usuario.types'
 import * as usuarioModel from '../models/usuario.model'
+// Importar jsonwebtoken usando require para evitar problemas de tipos
+const jwt = require('jsonwebtoken')
 
 // Iniciar sesión
 export const login = async (credenciales: UsuarioLogin) => {
